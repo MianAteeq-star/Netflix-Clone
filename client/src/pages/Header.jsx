@@ -41,14 +41,14 @@ const Header = () => {
         <div>
             <header className="absolute z-10 top-0 left-0 right-0 flex justify-between items-center px-8 md:px-24 py-5">
                 <div className="text-2xl font-bold cursor-pointer">
-                    <Link to={"/"}>
+                    <Link to={""}>
                         <img src={logo} alt="Netflix Logo" className="h-6 md:h-10" />
                     </Link>
                 </div>
 
                 {user ? (
                     <div className="flex flex-col gap-2 sm:flex-row items-center space-x-4">
-                        <span className='text-lg capitalize'>{user?.username}</span>
+                        <span className='text-lg capitalize'>Hi👋 {user?.username}</span>
                         <button onClick={handleLogout}
                             className="bg-red-600 px-4 py-2 cursor-pointer rounded-md hover:bg-red-700 transition duration-300">
                             Logout

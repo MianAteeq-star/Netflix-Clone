@@ -33,21 +33,8 @@ const Browse = () => {
 
     <div className="relative min-h-screen bg-black text-white">
        <Header/>
-      {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black">
-      </div> */}
-
-      {/* Full-screen Video */}
-    {/* </div>
-      <div className='w-[vw] overflow-hidden'>
-        <iframe
-          className="w-screen h-screen"
-          src={`https://www.youtube.com/embed/P8EIBksC0MA?si=HorxQfzFY2_TAO1W&autoplay=1&mute=1`}
-          title="YouTube video player"
-          frameBorder="0"
-          allowFullScreen>
-        </iframe>
-      </div>
-      */}
+    
+   
       <MovieContainer />
             </div>
   );

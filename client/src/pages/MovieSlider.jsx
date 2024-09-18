@@ -2,17 +2,25 @@ import React, { useRef } from 'react';
 
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { usePopularMovies } from '../hooks/usePopularMovies';
 import { TMDB_IMG_URL } from '../utils/constants';
+import { setOpen } from '../redux/movieSlice';
+import { toast } from 'react-toastify';
 
 
 
 const MovieSlider = () => { // This is only for home page
+  
   usePopularMovies()
-
-  const movies = useSelector((state) => state.movie.popularMovies);
+  const open = useSelector((state) => state.movie.open);
+  const diapatch = useDispatch()
+const movies = useSelector((state) => state.movie.popularMovies);
   console.log(movies)
+  const handleOpen = () => {
+    diapatch(setOpen(true))
+    toast.error('This feature is not available yet Please Login to watch the trailer')
+  } 
 
   const sliderRef = useRef(null);
 
@@ -27,9 +35,9 @@ const MovieSlider = () => { // This is only for home page
   return (
     <div className="relative">
       <h2 className="text-2xl font-bold mb-4">Popular Movies</h2>
-      <div ref={sliderRef} className="flex overflow-x-scroll scrollbar-hide space-x-4 p-4">
+      <div ref={sliderRef} className="flex overflow-x-scroll scrollbar-hide space-x-4 p-4 ">
         {movies?.map((movie) => (
-          <div key={movie?.id} className="min-w-[200px] transform transition-transform duration-300 hover:scale-105">
+          <div onClick={handleOpen} key={movie?.id} className="min-w-[200px] transform transition-transform duration-300 hover:scale-105">
             <img src={`${TMDB_IMG_URL}/${movie.poster_path}`} alt='movie Poster' className="w-full h-auto rounded-md" />
             <h3 className="text-lg mt-2">{movie?.title}</h3>
           </div>

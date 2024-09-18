@@ -5,9 +5,7 @@ import { setMovieId, setOpen } from '../redux/movieSlice'
 
 const Card = ({posterPath,movieId}) => {
   const dispatch = useDispatch()
-  if (posterPath === null) {
-    return null
-  }
+  if (posterPath === null) return null
   const handleOpen = () => {
    dispatch(setOpen(true))
    dispatch(setMovieId(movieId))
