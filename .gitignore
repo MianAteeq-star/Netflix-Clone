@@ -12,6 +12,22 @@ dist
 dist-ssr
 *.local
 
+# Node modules
+client/node_modules/
+server/node_modules/
+
+# Environment variable
+client/.env
+client/.env.local
+client/.env.*.local
+server/.env
+server/.env.local
+server/.env.*.local
+
+# Build output
+client/dist/
+server/dist/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -22,3 +38,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.env

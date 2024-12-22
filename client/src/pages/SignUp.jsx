@@ -18,7 +18,7 @@ const handleSubmit = async(e) => {
   e.preventDefault();
 try {
 
-  const response =await axios.post("http://localhost:1000/api/v1/user/register", formData)
+  const response =await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/register`, formData)
   console.log(response.data)
   if(response && response.data.success){
   
@@ -73,7 +73,7 @@ try {
             </div>
         
             <button className="w-full p-3 bg-red-500 rounded font-semibold hover:bg-red-800 transition duration-300">
-              Sign In
+              Sign Up
             </button>
             <div className="flex justify-between items-center text-sm text-gray-400">
               <div>

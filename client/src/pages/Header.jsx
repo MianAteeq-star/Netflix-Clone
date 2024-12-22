@@ -17,7 +17,7 @@ const Header = () => {
     const handleLogout = async () => {
         console.log("Logout");
         try {
-            const response = await axios.get("http://localhost:1000/api/v1/user/logout", {
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/logout`, {
                 withCredentials: true
             });
             if (response.data.success) {
